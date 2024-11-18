@@ -1,8 +1,5 @@
-import React from 'react'
-
-function chai() {
-  return (
-    <div>chai is ready</div>
-  )
+function Chai(){
+    return(
+        <h3>chai is ready</h3>
+    )
 }
-export default chai
