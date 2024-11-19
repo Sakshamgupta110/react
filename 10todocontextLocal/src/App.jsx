@@ -6,29 +6,29 @@
   import TodoForm from './components/TodoForm'
   import TodoItem from './components/TodoItem'
   function App() {
-  const [todos,setTodes] = useState([])
+  const [todos,setTodos] = useState([])
 
   const addTodo =(todo)=>{
-      setTodes((prev)=> [...prev,{id:Date.now(),...todo}])
+      setTodos((prev)=> [...prev,{id:Date.now(),...todo}])
   }
 
   const updateTodo =(id,todo) =>{
-    setTodes((prev)=> prev.map((item)=> (item.id === id ? todo : item ) ))
+    setTodos((prev)=> prev.map((item)=> (item.id === id ? todo : item ) ))
   }
 
   const deleteTodo =(id)=>{
-    setTodes((prev)=> prev.filter((item)=> item.id !== id))
+    setTodos((prev)=> prev.filter((item)=> item.id !== id))
   }
 
   const toggleComplete = (id) => {
-      setTodes((prev) => prev.map((prevTode)=> prevTode.id===id? {...prevTode,completed:!prevTode.completed} : prevTode))
+      setTodos((prev) => prev.map((prevTode)=> prevTode.id===id? {...prevTode,completed:!prevTode.completed} : prevTode))
   }
 
   useEffect(
     ()=>{
       const todos =JSON.parse(localStorage.getItem("todos"))
       if(todos && todos.length > 0){
-        setTodes(todos)
+        setTodos(todos)
     }
   },[])
 
